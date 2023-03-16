@@ -1,5 +1,7 @@
 package stepDefs;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 import java.util.List;
 
@@ -63,7 +65,7 @@ public class DemoBlazeStepDef {
 	@Then("Should display Home Page")
 	public void should_display_home_page() {
 		boolean isDisp = driver.findElement(By.xpath("//a[contains(text(),'Welcome priya@13')]")).isDisplayed();
-		Assert.assertTrue(isDisp);
+		AssertJUnit.assertTrue(isDisp);
 	}
 	
 	@When("Add item {string} to cart")
@@ -121,9 +123,9 @@ public class DemoBlazeStepDef {
 	public void item_should_be_purchased() {
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		 boolean isDis=driver.findElement(By.xpath("(//h2[text()='Thank you for your purchase!'])")).isDisplayed();
-		  Assert.assertTrue(isDis);
+		  AssertJUnit.assertTrue(isDis);
 	}
-@After
+@AfterMethod
 public void attachImgToReport(Scenario scenario) throws WebDriverException {
 		if(scenario.isFailed())
 		{
