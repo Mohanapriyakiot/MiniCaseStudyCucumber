@@ -96,17 +96,16 @@ public class DemoBlazeStepDef {
 	public void delete_an_item_from_cart() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Cart']"))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//a[text()='Delete'])[1]"))))
-				.click();
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//a[text()='Delete'])[1]")))).click();
 		Thread.sleep(3000);
 	}
 
 	@Then("Item should be deleted")
 	public void item_should_be_deleted() {
 		String valueBefore = driver.findElement(By.id("totalp")).getText();
-		System.out.println(valueBefore);
+	//	System.out.println(valueBefore);
 		String valueAfter = driver.findElement(By.id("totalp")).getText();
-		System.out.println(valueAfter);
+	//	System.out.println(valueAfter);
 		Assert.assertNotEquals(valueBefore, valueAfter);
 	}
 
