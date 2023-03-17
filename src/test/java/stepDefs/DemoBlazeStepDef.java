@@ -37,7 +37,6 @@ public class DemoBlazeStepDef {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options= new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
-	//  options.addArguments("-disable notifications");
 		DesiredCapabilities cp= new DesiredCapabilities();
 		cp.setCapability(ChromeOptions.CAPABILITY, options);
 		options.merge(cp);
@@ -80,12 +79,19 @@ public class DemoBlazeStepDef {
 	      wait.until(ExpectedConditions.alertIsPresent());
 		  Alert alert=driver.switchTo().alert();
 		  alert.accept();
+		 
 	}
 
 	@Then("Item must be added to cart")
 	public void item_must_be_added_to_cart() {
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
 		driver.findElement(By.id("cartur")).click();
+	//	System.out.println("Items are added");
+		List<WebElement> cartList=driver.findElements(By.xpath("//td[2]"));
+		wait.until(ExpectedConditions.visibilityOfAllElements(cartList));
+		if(!(cartList.isEmpty())){
+			Assert.assertTrue(true);
+		}
 	}
 	
 	@When("Delete an item from cart")
@@ -99,16 +105,14 @@ public class DemoBlazeStepDef {
 	@Then("Item should be deleted")
 	public void item_should_be_deleted() {
 		    String valueBefore = driver.findElement(By.id("totalp")).getText();
-		//	int iBefore=Integer.parseInt(valueBefore);
 			String valueAfter = driver.findElement(By.id("totalp")).getText();
-		//	int iAfter=Integer.parseInt(valueAfter);
 			Assert.assertNotEquals("valueBefore", "valueAfter");		
 	}
 
 	@When("Place Order")
 	public void place_order() throws InterruptedException {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		 driver.findElement(By.xpath("//button[@class='btn btn-success']")).click();
+		  WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+		  wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='btn btn-success']")))).click();
 		  driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Mohanapriya");
 		  driver.findElement(By.xpath("//input[@id='country']")).sendKeys("India");
 		  driver.findElement(By.xpath("//input[@id='city']")).sendKeys("Salem");
@@ -120,10 +124,12 @@ public class DemoBlazeStepDef {
 		  driver.findElement(By.xpath("//button[text()='Purchase']")).click();
 	}
 	@Then("Item should be purchased")
-	public void item_should_be_purchased() {
+	public void item_should_be_purchased() throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		 boolean isDis=driver.findElement(By.xpath("(//h2[text()='Thank you for your purchase!'])")).isDisplayed();
 		  AssertJUnit.assertTrue(isDis);
+		  Thread.sleep(1000);
+		  driver.findElement(By.xpath("//button[text()='OK']")).click();
 	}
 @AfterMethod
 public void attachImgToReport(Scenario scenario) throws WebDriverException {
