@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Mar 17 14:21:37 IST 2023</td>
+<td>Started on:</td><td>Fri Mar 17 15:27:10 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>15 seconds (15810 ms)</td>
+<tr><td>Total time:</td><td>46 seconds (46466 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,60 +67,37 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runners.DemoBlazeRunner.setUpClass()'><b>setUpClass</b><br>Test class: runners.DemoBlazeRunner<br>Parameters: org.testng.TestRunner@5a67e962</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
-  (Session info: chrome=111.0.5563.65)
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_202&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [42b8204351059c02256ef0f2bcf80917, get {url=https://www.demoblaze.com/}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.65, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:49905}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49905/devtoo..., se:cdpVersion: 111.0.5563.65, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 42b8204351059c02256ef0f2bcf80917
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at stepDefs.DemoBlazeStepDef.start(DemoBlazeStepDef.java:43)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2023938592", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2023938592'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
-  (Session info: chrome=111.0.5563.65)
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_202&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [42b8204351059c02256ef0f2bcf80917, get {url=https://www.demoblaze.com/}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.65, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:49905}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49905/devtoo..., se:cdpVersion: 111.0.5563.65, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 42b8204351059c02256ef0f2bcf80917
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at stepDefs.DemoBlazeStepDef.start(DemoBlazeStepDef.java:43)
-</pre></div></td>
-<td>15</td>
+<td title='runners.DemoBlazeRunner.runScenario()'><b>runScenario</b><br>Test class: runners.DemoBlazeRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Delete an item", "DemoBlaze Run feature"</td>
+<td></td>
+<td>7</td>
+<td>runners.DemoBlazeRunner@24a35978</td></tr>
+<tr>
+<td title='runners.DemoBlazeRunner.runScenario()'><b>runScenario</b><br>Test class: runners.DemoBlazeRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Purchase", "DemoBlaze Run feature"</td>
+<td></td>
+<td>2</td>
+<td>runners.DemoBlazeRunner@24a35978</td></tr>
+<tr>
+<td title='runners.DemoBlazeRunner.runScenario()'><b>runScenario</b><br>Test class: runners.DemoBlazeRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add items to cart", "DemoBlaze Run feature"</td>
+<td></td>
+<td>10</td>
+<td>runners.DemoBlazeRunner@24a35978</td></tr>
+<tr>
+<td title='runners.DemoBlazeRunner.runScenario()'><b>runScenario</b><br>Test class: runners.DemoBlazeRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add items to cart", "DemoBlaze Run feature"</td>
+<td></td>
+<td>8</td>
+<td>runners.DemoBlazeRunner@24a35978</td></tr>
+<tr>
+<td title='runners.DemoBlazeRunner.runScenario()'><b>runScenario</b><br>Test class: runners.DemoBlazeRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login into App", "DemoBlaze Run feature"</td>
+<td></td>
+<td>4</td>
 <td>runners.DemoBlazeRunner@24a35978</td></tr>
 </table><p>
 </body>

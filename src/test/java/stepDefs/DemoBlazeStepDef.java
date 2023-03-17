@@ -28,6 +28,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DemoBlazeStepDef {
 	static WebDriver driver;
+	String valueBefore;
 
 	@BeforeAll
 	public static void start() {
@@ -96,14 +97,19 @@ public class DemoBlazeStepDef {
 	public void delete_an_item_from_cart() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Cart']"))).click();
+		List<WebElement> ItemsBefore = driver.findElements(By.xpath("//td[2]"));
+		wait.until(ExpectedConditions.visibilityOfAllElements(ItemsBefore));
+		String valueBefore = driver.findElement(By.id("totalp")).getText();
+		//	System.out.println(valueBefore);
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//a[text()='Delete'])[1]")))).click();
 		Thread.sleep(3000);
 	}
 
 	@Then("Item should be deleted")
 	public void item_should_be_deleted() {
-		String valueBefore = driver.findElement(By.id("totalp")).getText();
-	//	System.out.println(valueBefore);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		List<WebElement> ItemsAfter = driver.findElements(By.xpath("//td[2]"));
+		wait.until(ExpectedConditions.visibilityOfAllElements(ItemsAfter));
 		String valueAfter = driver.findElement(By.id("totalp")).getText();
 	//	System.out.println(valueAfter);
 		Assert.assertNotEquals(valueBefore, valueAfter);
