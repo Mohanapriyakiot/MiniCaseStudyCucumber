@@ -136,6 +136,7 @@ public class DemoBlazeStepDef {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		boolean isDis = driver.findElement(By.xpath("(//h2[text()='Thank you for your purchase!'])")).isDisplayed();
 		Assert.assertTrue(isDis);
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='OK']"))).click();
 	}
 
